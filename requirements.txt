@@ -1,0 +1,5 @@
+streamlit
+whoosh
+PyPDF2
+python-docx
+jieba
