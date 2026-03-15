@@ -170,7 +170,14 @@ st.set_page_config(page_title="智能文档检索系统", layout="wide")
 
 # 🔍 搜索框放在最上面
 st.title("📄 智能文档检索系统")
-query_str = st.text_input("🔍 输入关键词或短语：", placeholder="支持中文短语搜索...")
+# 🔍 搜索区域：支持 Enter 或点击按钮
+with st.form("search_form"):
+    query_str = st.text_input(
+        "请输入关键词或短语：",
+        placeholder="支持中文短语搜索...",
+        key="search_input"
+    )
+    submit_button = st.form_submit_button("🔍 检索")
 
 # 侧边栏：上传 & 管理
 with st.sidebar:
